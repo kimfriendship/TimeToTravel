@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>time to travel</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/travel-info.css" />
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <header class="header">
+        <h1>Time to Travel</h1>
+      </header>
+      <aside class="icon-bar">
+        <nav>
+          <ul class="icon-menu">
+            <li>icon1</li>
+            <li>icon2</li>
+            <li>icon3</li>
+            <li>icon4</li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="main">
+        <h2>여행정보</h2>
+        <div class="airline-ticket">
+          <h3>항공권</h3>
+          <ol class="airline-schedule">
+            <li class="clearfix">
+              <div class="airline-info1">
+                <em>출발</em>
+              </div>
+              <div class="airline-info2">
+                <span class="date">4/3 FRI</span>
+                <span class="airlines">아시아나항공</span>
+              </div>
+              <div class="airline-departure">
+                <span class="time">20:40</span>
+                <span class="airport">ICN</span>
+              </div>
+              <div class="airline-arrival">
+                <span class="time">16:00</span>
+                <span class="airport">LAX</span>
+              </div>
+            </li>
+            <li class="clearfix">
+              <div class="airline-info1">
+                <em>도착</em>
+              </div>
+              <div class="airline-info2">
+                <span class="date">4/3 FRI</span>
+                <span class="airlines">아시아나항공</span>
+              </div>
+              <div class="airline-departure">
+                <span class="time">20:40</span>
+                <span class="airport">ICN</span>
+              </div>
+              <div class="airline-arrival">
+                <span class="time">16:00</span>
+                <span class="airport">LAX</span>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <div class="hotel-reservation1">
+          <h3>숙소 1</h3>
+          <span class="hotel-name">ACE HOTEL</span>
+          <span class="hotel-place">팜스프링스</span>
+          <span class="hotel-site">AGODA</span>
+        </div>
+        <div class="hotel-reservation2">
+          <h3>숙소 2</h3>
+          <span class="hotel-name">ACE HOTEL</span>
+          <span class="hotel-place">팜스프링스</span>
+          <span class="hotel-site">AGODA</span>
+        </div>
+      </main>
+      <div class="popup-btn">
+        +
+      </div>
+      <div class="popup-form">
+        <h2>여행정보 입력</h2>
+
+        <label for="date-select">출발:</label>
+        <select name="month" id="month-select">
+          <option value="">MONTH</option>
+          <option value="">APR</option>
+          <option value="">MAY</option>
+        </select>
+        <select name="day" id="day-select">
+          <option value="">DAY</option>
+          <option value="">13</option>
+          <option value="">14</option>
+        </select>
+        <input type="text" class="input-airlines" placeholder="항공사" />
+        <br />
+        <select name="hour" id="hour-select">
+          <option value="">HOUR</option>
+          <option value="">09</option>
+          <option value="">10</option>
+        </select>
+        <select name="min" id="min-select">
+          <option value="">MINUTE</option>
+          <option value="">20</option>
+          <option value="">30</option>
+        </select>
+        <input type="text" class="dep-airlines" placeholder="출발공항" />
+
+        <select name="hour" id="hour-select">
+          <option value="">HOUR</option>
+          <option value="">09</option>
+          <option value="">10</option>
+        </select>
+        <select name="min" id="min-select">
+          <option value="">MINUTE</option>
+          <option value="">20</option>
+          <option value="">30</option>
+        </select>
+        <input type="text" class="arr-airlines" placeholder="도착공항" />
+        <br />
+        <label for="date-select">도착:</label>
+        <select name="month" id="month-select">
+          <option value="">MONTH</option>
+          <option value="">APR</option>
+          <option value="">MAY</option>
+        </select>
+        <select name="day" id="day-select">
+          <option value="">DAY</option>
+          <option value="">13</option>
+          <option value="">14</option>
+        </select>
+        <input type="text" class="input-airlines" placeholder="항공사" />
+        <br />
+        <select name="hour" id="hour-select">
+          <option value="">HOUR</option>
+          <option value="">09</option>
+          <option value="">10</option>
+        </select>
+        <select name="min" id="min-select">
+          <option value="">MINUTE</option>
+          <option value="">20</option>
+          <option value="">30</option>
+        </select>
+        <input type="text" class="dep-airlines" placeholder="출발공항" />
+
+        <select name="hour" id="hour-select">
+          <option value="">HOUR</option>
+          <option value="">09</option>
+          <option value="">10</option>
+        </select>
+        <select name="min" id="min-select">
+          <option value="">MINUTE</option>
+          <option value="">20</option>
+          <option value="">30</option>
+        </select>
+        <input type="text" class="arr-airlines" placeholder="도착공항" />
+        <br />
+        <label for="">숙소정보:</label>
+        <input type="text" class="input-title" placeholder="숙소이름" />
+        <input type="text" class="input-place" placeholder="장소" />
+        <input type="text" class="input-site" placeholder="예약사이트" />
+        <br />
+
+        <button>등록</button>
+      </div>
+    </div>
+  </body>
+</html>

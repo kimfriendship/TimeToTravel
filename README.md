@@ -67,7 +67,18 @@ html, css, javascript, github, json-server, webpack, babel, axios
 
 ## 디렉토리 구조
 
-+추가 예정
+- db.json
+- public
+  - index.html
+  - js
+    * main.js
+    * popup-warning.js
+    * select-box-date.js
+    * travel-list.js
+  - css
+    * index.css 
+    * reset.css 
+  - img
 
 <br>
 

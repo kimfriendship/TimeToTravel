@@ -1,0 +1,1085 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.5.0/css/all.css');
+/* BORDER-BOX */
+body *,
+body *::before,
+body *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* MODULE */
+.clearfix::after {
+  display: block;
+  content: '';
+  clear: both;
+}
+.float-left {
+  float: left;
+}
+/* html, body {
+  height: 100%;
+} */
+body {
+  font-family: 'Open Sans', sans-serif;
+  /* font-family: 'Nanum Gothic', sans-serif; */
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+.wrapper {
+  width: 980px;
+  /* min-height: 680px; */
+  margin: 0 auto;
+  border-radius: 20px;
+  background-color: #fff;
+  overflow: hidden;
+}
+.main-wrapper {
+  width: calc(100% - 90px);
+  float: right;
+  
+}
+main.main-view {
+  display: block;
+  z-index: 97;
+  
+}
+
+.main-schedule,
+.main-travels,
+.main-info {
+  display: none;
+  height: 690px;
+  overflow: auto;
+}
+
+/* HEADER */
+h1 {
+  cursor: pointer;
+}
+.header {
+  width: 100%;
+  height: 70px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 20px;
+}
+.header h2 {
+  width: 100%;
+  font-size: 28px;
+  text-align: center;
+  font-weight: 400;
+  font-style: italic;
+  /* background-color: #ccc; */
+}
+.header strong {
+  font-weight: 600;
+}
+/* LEFT SIDE MENU */
+.menu-bar {
+  width: 90px;
+  min-height: 690px;
+  height: 100%;
+  float: left;
+  padding: 30px;
+  border-radius: 20px 0 0 20px;
+  background-color: #ccc;
+}
+.menu-bar h1 {
+  transition: opacity 0.3s;
+  /* padding: 20px; */
+  font-size: 30px;
+  /* width: 50px; */
+  /* text-align: center; */
+  font-weight: 400;
+  font-style: italic;
+  color: #fff;
+  text-shadow: 12px 12px rgb(133, 154, 206);
+  /* background-color: #ccc; */
+  /* outline: 1px solid #000; */
+}
+.menu-bar > h1:hover {
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+.menu-list {
+  padding-top: 50px;
+}
+.menu-list li {
+  /* width: 60px; */
+  height: 60px;
+  opacity: 0.5;
+  /* margin: 20px; */
+  /* background-color: #999; */
+}
+.menu-list > li > i.fas:hover {
+  /* box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.2); */
+  transform: scale(1.2);
+  /* opacity: 0.9; */
+  transition: box-shadow 0.5s, transform 0.5s, opacity 0.3s;
+}
+.menu-list > li > i {
+  color: #fff;
+  font-size: 26px;
+  line-height: 60px;
+  cursor: pointer;
+  transition: box-shadow 0.5s, transform 0.5s, opacity 0.3s;
+}
+.menu-list > li > .fa-calendar-alt {
+  margin-left: 3px;
+}
+.menu-list > li > .fa-plane-departure {
+  font-size: 24px;
+}
+.menu-list .active {
+  opacity: 1;
+}
+
+#calendar,
+#airplane,
+#money {
+  display: none;
+}
+
+/* ----- timeline ----- */
+/* MAIN */
+.main-schedule {
+  width: 100%;
+  float: right;
+
+}
+
+.main-schedule h3 {
+  font-size: 24px;
+  padding: 15px;
+  font-weight: 700;
+  /* text-align: center; */
+  /* background-color: #cdcdcd; */
+}
+.timeline-wrapper {
+  padding: 0 30px;
+}
+/* DATE */
+.date-wrapper {
+  position: relative;
+  width: 100%;
+  margin-left: -18px;
+  padding: 10px 50px 10px 45px;
+  /* background-color: #f4f4f4; */
+}
+.date-container {
+  width: calc(100% + 34px);
+  overflow: hidden;
+}
+.date-before-btn,
+.date-after-btn {
+  /* float: left; */
+  position: absolute;
+  top: 5px;
+  padding: 10px;
+  margin-top: 25px;
+  font-size: 30px;
+  color: rgb(133, 154, 206);
+  /* background-color: #e8e8e8; */
+  cursor: pointer;
+  transition: transform 0.3s;
+  transform: scale(1);
+}
+.date-before-btn:hover,
+.date-after-btn:hover {
+  transition: transform 0.3s;
+  transform: scale(1.1);
+}
+.date-before-btn {
+  left: 0px;
+}
+.date-after-btn {
+  right: -28px;
+}
+.date-list {
+  /* float: left; */
+  display: flex;
+  /* width: 660px; */
+  height: 100px;
+  padding: 5px 0;
+  /* background-color: rgb(220, 220, 220); */
+}
+.date-item {
+  flex: 0 0 70px;
+  margin: 0 7px 10px 7px;
+  background-color: rgb(225, 225, 225);
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+  animation-duration: .5s;
+  animation-fill-mode: both;
+  animation-name: loading-date;
+}
+
+@keyframes loading-date {
+  0% {
+      transform: translate3d(-20px, 0px, 0px);
+      /* left: -50px; */
+      opacity: 0;
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0px);
+      /* left: 0px; */
+      opacity: 1;
+  }
+}
+.date-item:hover,
+.date-list .active {
+  color: #fff;
+  background-color: rgb(133, 154, 206);
+  transition: background-color 0.5s;
+}
+.week {
+  font-size: 13px;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+.day {
+  margin-bottom: 5px;
+  font-size: 38px;
+  font-weight: 200;
+}
+/* 여행타이틀 */
+.timeline-travel-title,
+.info-travel-title {
+  width: 746px;
+  margin-left: 32px;
+  font-size: 25px;
+  padding: 20px;
+  color: #fff;
+  font-weight: 700;
+  /* background-color: #d4d4d4; */
+  background-position: 50% 65%;
+  background-size: cover;
+  border-radius: 5px;
+  background-color: rgba(83, 103, 104, 0.3);
+  background-blend-mode: multiply;
+  text-shadow: rgba(0, 0, 0, 0.3) 1px 0 4px;
+}
+.main-info .info-travel-title {
+  width: 100%;
+  margin: 0 0 30px 0;
+}
+/* TIME */
+.timeline {
+  position: relative;
+  margin-top: 20px;
+  width: 746px;
+  margin-left: 32px;
+  /* padding: 10px; */
+}
+.time-list {
+  float: left;
+  margin-right: 10px;
+  width: 100%;
+}
+.time-list li {
+  padding: 30px 10px;
+  font-size: 15px;
+  border-bottom: 1px solid #dcdcdc;
+  
+}
+
+.schedule-list {
+  position: absolute;
+  float: left;
+  width: 100%;
+  /* height: 100vh; */
+  padding: 20px;
+  /* background-color: #f4f4f4; */
+}
+.schedule-list li {
+  position: absolute;
+  width: 87%;
+  background-color: #cdcdcd;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  /* margin-left: 55px; */
+  line-height: 1.4;
+  left: 80px;
+  cursor: pointer;
+  min-height: 38px;
+}
+.schedule-list li:hover {
+  opacity: .9;
+}
+/* 2, 5, 8, 11 */
+.schedule-list .color-0 {
+  background-color: thistle;
+}
+/* 3, 6, 9, 12 */
+.schedule-list .color-1 {
+  background-color: rgb(127, 116, 183);
+}
+/* 3, 6, 9, 12 */
+.schedule-list .color-2 {
+  background-color: rgb(73, 138, 134);
+}
+/* 1 */
+.schedule-list .color-3 {
+  background-color: rgb(220, 139, 151);
+}
+.schedule-list li .time,
+.schedule-list li .place {
+  padding-right: 5px;
+}
+.schedule-list li .place {
+  font-weight: 600;
+}
+
+.remove-btn {
+  position: absolute;
+  top: 0px;
+  right: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 17px;
+  outline: transparent;
+  font-family: 'Open Sans';
+  font-weight: 200;
+}
+.remove-btn:hover {
+  opacity: .7;
+  outline: none;
+}
+#s01 {
+  top: 75px;
+  height: 75px;
+  color: #fff;
+  background-color: rgb(158, 199, 208);
+}
+#s02 {
+  top: 330px;
+  color: #fff;
+  background-color: rgb(211, 149, 169);
+}
+
+.add-schedule-btn {
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  color: #fff;
+  background-color: #333;
+  cursor: pointer;
+}
+
+/* ----- travel list ----- */
+
+/* MAIN */
+.travel-list {
+  width: 95%;
+  margin: 0 auto;
+  /* margin-left: 100px; */
+  padding: 15px 30px 5px 30px;
+  /* background-color: #f9f9f9; */
+}
+.travel-list li {
+  position: relative;
+  float: left;
+  width: calc((100% - 30px) / 2);
+  height: 260px;
+  border-radius: 15px 15px 0px 15px;
+  padding: 20px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  background-color: #d4d4d4;
+  cursor: pointer;
+  color: #fff;
+  background-color: rgba(83, 103, 104, 0.6);
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+  transition: box-shadow 0.5s, transform 0.5s, opacity 0.3s;
+  transition: transform 0.5s;
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+  animation-name: loading-item;
+}
+@keyframes loading-item {
+  0% {
+      top: -50px;
+      opacity: 0;
+  }
+  100% {
+      top: 0px;
+      opacity: 1;
+  }
+}
+
+.travel-list li:nth-child(odd) {
+  margin-right: 30px;
+}
+
+.travel-list li:hover {
+  box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.2);
+  transform: translate(-2px, -2px);
+  transition: box-shadow 0.5s, transform 0.5s, opacity 0.3s;
+}
+
+.bg-0 {
+  /* filter: blur(3px); */
+  filter: grayscale(40%);
+  background-image: url('../img/bg-maldives.jpg');
+}
+.bg-1 {
+  /* filter: blur(3px); */
+  filter: grayscale(40%);
+  background-image: url('../img/bg-paris.jpeg');
+}
+.bg-2 {
+  /* filter: blur(1px); */
+  filter: grayscale(40%);
+  background-image: url('../img/bg-greece.jpg');
+}
+.bg-3 {
+  filter: grayscale(40%);
+  background-image: url('../img/bg-positano.jpg');
+}
+.bg-4 {
+  /* filter: blur(3px); */
+  filter: grayscale(40%);
+  background-image: url('../img/bg-resort.jpg');
+}
+.bg-5 {
+  /* filter: blur(3px); */
+  filter: grayscale(40%);
+  background-image: url('../img/bg-korea.jpg');
+}
+.bg-6 {
+  /* filter: blur(1px); */
+  filter: grayscale(40%);
+  background-image: url('../img/bg-hawaii.jpg');
+}
+.bg-7 {
+  filter: grayscale(40%);
+  background-image: url('../img/bg-winery.jpg');
+}
+
+
+.travel-list li h2 {
+  font-size: 32px;
+  font-weight: 300;
+}
+.travel-list li em {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+.travel-info {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 19px;
+  /* background-color: rgba(255, 255, 255, 0.3); */
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0px 0px 0px 15px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 1.6;
+}
+.travel-place {
+  display: block;
+  font-size: 15px;
+}
+.travel-date {
+  display: block;
+  font-size: 15px;
+}
+.travel-remove-btn,
+.new-travel-popup > .new-travel-popup-remove-btn,
+.new-schedule-popup > .popup-remove-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: 200;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: white;
+  outline: transparent;
+  padding: 5px 7px;
+  font-family: 'Open Sans';
+}
+.new-schedule-popup > .popup-remove-btn,
+.new-travel-popup > .new-travel-popup-remove-btn {
+  color: #000;
+}
+.new-travel-popup-remove-btn
+.travel-remove-btn:hover {
+  opacity: 0.8;
+}
+/* list 비어있을때 나타나는 문구 */
+.travel-none-text {
+  display: none;
+  position: absolute;
+  top: 300px;
+  width: 460px;
+  text-align: center;
+  left: calc(50% - 180px);
+  font-size: 26px;
+  color: rgb(164, 164, 164);
+}
+.travel-none-text i {
+  padding: 5px 10px;
+  color: #f3f3f3;
+  display: inline-block;
+  background-color: rgb(96, 118, 176);
+  border-radius: 5px;
+}
+
+/* ----- travel info ----- */
+
+/* MAIN */
+.main-info h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.airline-ticket,
+.hotel-info {
+  width: 100%;
+  margin: 20px auto;
+  padding: 20px 40px;
+  line-height: 1.2;
+  /* background-color: #f4f4f4; */
+}
+.main-info .airline-ticket {
+  margin-top: 0;
+}
+.airline-schedule li,
+.hotel-schedule li {
+  background-color: #f4f4f4;
+  margin-bottom: 10px;
+  text-align: center;
+  padding: 20px;
+  /* vertical-align: middle; */
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+.airline-schedule li {
+  background-color: rgba(94, 126, 186, .6);
+}
+.hotel-schedule li {
+  background-color: rgba(80, 155, 176, 0.6);
+}
+.airline-schedule li div,
+.hotel-schedule li * {
+  padding: 10px 20px;
+  flex: 1 1 auto;
+}
+.airline-schedule li em,
+.hotel-schedule li em {
+  line-height: 50px;
+}
+.schedule .place,
+.schedule .detail {
+  font-size: 14px;
+}
+.date,
+.time {
+  display: block;
+  font-size: 20px;
+  font-weight: 400;
+  /* margin-bottom: 5px; */
+}
+.airlines,
+.airport {
+  display: block;
+  font-size: 16px;
+}
+
+.hotel-name,
+.hotel-place,
+.hotel-site {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 60px;
+}
+
+/* ----- POP UP ----- */
+.popup-style {
+  display: none;
+  position: fixed;
+  top: 120px;
+  padding: 30px;
+  text-align: center;
+  background-color: rgb(72, 101, 154);
+  z-index: 99;
+  border-radius: 10px;
+  box-shadow: 8px 8px 10px 5px rgba(0, 0, 0, 0.3);
+  animation-duration: 1s;
+  animation-delay: .3s;
+  animation-fill-mode: both;
+  animation-name: loading-popup;
+}
+@keyframes loading-popup {
+  0% {
+      transform: translate3d(0px, -20px, 0);
+  }
+  100% {
+      transform: translate3d(0px, 0px, 0);
+  }
+}
+.popup-style label {
+  padding: 9px 10px;
+  color: #15233e;
+}
+.popup-style h2 {
+  font-size: 23px;
+  padding: 5px;
+  margin-bottom: 10px;
+  color: #dcdcdc;
+}
+.popup-style input {
+  font-size: 16px;
+  padding: 13px 10px 5px 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 0px;
+  border-bottom: 1px solid #15233e;
+  background-color: transparent;
+  color: #a3c5ff;
+}
+.popup-style input:hover,
+.popup-style input:focus {
+  outline: transparent;
+  border-bottom: 1px solid #a3c5ff;
+}
+.popup-style input::placeholder {
+  color: #15233e;
+}
+.popup-style select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 15px;
+  border: 0px;
+  border-bottom: 1px solid #000;
+  border-radius: 0px;
+  margin-bottom: 13px;
+}
+.popup-style select:hover {
+  background-color: rgb(92, 120, 172);
+}
+.popup-style select:focus {
+  outline: transparent;
+}
+.new-travel-popup-remove-btn,
+.popup-remove-btn {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  font-size: 28px;
+  cursor: pointer;
+}
+.new-travel-popup-remove-btn:hover,
+.popup-remove-btn:hover {
+  opacity: 0.7;
+}
+.add-travel-btn-hidden,
+.add-schedule-btn-hidden,
+.add-info-btn-hidden,
+.add-info2-btn-hidden {
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 95;
+  background-color: rgba(72, 101, 154, 0.7);
+}
+.popup-style button {
+  margin-top: 10px;
+  font-size: 18px;
+  padding: 13px;
+  width: 100%;
+  color: #4a6eac;
+  background-color: #112851;
+  border: 0px;
+  cursor: pointer;
+}
+.popup-style button:hover {
+  background-color: #1c3e78;
+}
+/* 셀렉트 랩, 화살표 */
+.select-wrapper {
+  position: relative;
+  display: inline;
+}
+.select-arrow {
+  position: absolute;
+  top: calc(50% - 4px);
+  right: 16px;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  border-style: solid;
+  border-width: 8px 5px 0 5px;
+  border-color: rgb(0, 0, 0) transparent transparent transparent;
+}
+/* 여행목록팝업 */
+.new-travel-popup {
+  left: calc(50% - 260px);
+  width: 480px;
+}
+.start-date,
+.end-date {
+  margin: 5px;
+  padding: 5px;
+}
+.new-travel-popup select {
+  width: 24%;
+}
+
+/* 타임라인팝업 */
+.new-schedule-popup {
+  left: calc(50% - 210px);
+  width: 400px;
+  background-color: rgb(83, 151, 181);
+}
+.add-schedule-btn-hidden {
+  background-color: rgba(83, 151, 181, .7);
+}
+button.add-schedule-btn {
+  background-color: rgb(13, 77, 104);
+  color: rgb(105, 166, 193);
+}
+button.add-schedule-btn:hover {
+  background-color: rgb(29, 96, 125);
+  color: rgb(127, 192, 220);
+}
+.new-schedule-popup select {
+  width: 30%;
+}
+.new-schedule-popup select:hover {
+  background-color: rgb(105, 166, 193);
+}
+.new-schedule-popup input{
+  color: rgb(143, 206, 234);
+}
+.new-schedule-popup input:hover {
+  border-bottom: 1px solid rgb(143, 206, 234);
+}
+.new-schedule-popup input:focus {
+  border-bottom: 1px solid rgb(143, 206, 234);
+  color: rgb(143, 206, 234);
+}
+.new-schedule-popup h2 {
+  font-size: 23px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.new-schedule-popup label {
+  padding: 9px 10px;
+}
+
+/* 여행정보팝업 */
+.new-info-popup {
+  width: 500px;
+  display: none;
+  top: 35px;
+  left: calc(50% - 250px);
+}
+.new-info-popup input {
+  width: 37%;
+}
+.new-info-popup select {
+  width: 22%;
+}
+.new-info-popup h3 {
+  font-weight: 600;
+}
+.start-airline,
+.end-airline {
+  padding: 10px 0;
+}
+.start-airline select,
+.start-airline input {
+
+}
+.start-airline select {
+
+}
+.start-airline input,
+.end-airline input {
+  padding-bottom: 12px;
+}
+.new-info-popup2 {
+  width: 500px;
+  display: none;
+  top: 150px;
+  left: calc(50% - 250px);
+}
+
+/* 
+.schedule-input-place,
+.schedule-input-detail {
+  font-size: 14px;
+  padding: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+} */
+.popup-remove-btn,
+.new-travel-popup-remove-btn {
+  position: absolute;
+  top: 10px;
+  right: 13px;
+  font-size: 23px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.warnning-text {
+  display: none;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #e38484;
+}
+
+/* .input-place,
+.input-title {
+  font-size: 14px;
+  padding: 5px;
+  margin-bottom: 10px;
+  width: 100px;
+} */
+
+/* 팝업띄우는버튼 */
+.new-schedule-btn,
+.new-travel-btn,
+.new-info-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  /* background-color: rgb(61, 112, 120); */
+  text-align: center;
+  line-height: 76px;
+  color: #fff;
+  font-size: 50px;
+  cursor: pointer;
+  font-weight: 200;
+  transition: transform 0.3s;
+  transform: scale(1);
+  z-index: 97;
+}
+.new-travel-btn {
+  background-color: rgb(96, 118, 176);
+  
+}
+.new-travel-btn:hover {
+  background-color: rgb(105, 130, 196);
+  transition: transform 0.3s;
+  transform: scale(1.05);
+}
+.new-schedule-btn {
+  z-index: 97;
+  background-color: rgb(76, 116, 130);
+}
+.new-schedule-btn:hover {
+  background-color: rgb(85, 137, 155);
+  transition: transform 0.3s;
+  transform: scale(1.05);
+}
+.new-info-btn {
+  z-index: 97;
+  background-color: rgb(96, 118, 176);
+}
+
+.new-info-btn:hover {
+  background-color: #3f8594;
+  transition: transform 0.3s;
+  transform: scale(1.05);
+}
+
+/* 여행정보입력 팝업 추가 버튼 */
+.detail-btn-wrapper {
+  position: fixed;
+  right: 20px;
+  width: 100px;
+  height: 300px;
+  /* background-color: #ddd; */
+  bottom: 20px;
+  /* display: none; */
+}
+.new-info-detail-btn {
+  position: fixed;
+  right: 30px;
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 76px;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+  font-weight: 200;
+  transition: transform 0.3s;
+  transform: scale(1);
+}
+.airline-btn {
+  /* bottom: 210px; */
+  bottom: 30px;
+  background-color: rgb(66, 122, 183);
+  z-index: 88;
+  transform: translate3d(0px, 0px, 0px);
+  transition: transform 0.5s;
+}
+.hotel-btn {
+  /* bottom: 120px; */
+  bottom: 30px;
+  background-color: rgb(133, 85, 167);
+  z-index: 89;
+  transform: translate3d(0px, 0px, 0px);
+  transition: transform 0.5s;
+}
+
+.btn-act {
+  transform: translate3d(0px, -180px, 0px);
+  transition: transform 0.5s;
+}
+.btn-act2 {
+  transform: translate3d(0px, -90px, 0px);
+  transition: transform 0.5s;
+}
+.btn-enter {
+  transform: scale(1.1);
+  transition: transform 0.5s;
+}
+
+/* 팝업 모달효과 배경 */
+.popup-bg,
+.delete-popup-bg,
+.new-travel-popup-bg {
+  /* display: block; */
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 97;
+  animation-duration: .5s;
+  animation-fill-mode: both;
+  animation-name: loading-popupbg;
+}
+@keyframes loading-popupbg {
+  0% {
+      opacity: .8;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+/* 경고팝업 */
+.delete-confirm {
+  /* display: block; */
+  display: none;
+  position: fixed;
+  top: 180px;
+  left: calc(50% - 210px);
+  width: 400px;
+  padding: 30px;
+  margin: 30px;
+  text-align: center;
+  background-color: #fff;
+  z-index: 99;
+  border-radius: 5px;
+  animation-duration: 1s;
+  animation-delay: .3s;
+  animation-fill-mode: both;
+  animation-name: loading-popup;
+}
+.delete-icon {
+  display: block;
+  color: #ed7373;
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+.delete-confirm em {
+  font-weight: bold;
+}
+.delete-confirm > button {
+  display: block;
+  float: left;
+  font-size: 17px;
+  padding: 10px;
+  width: calc(50% - 10px);
+  color: #fff;
+  margin: 15px 5px 5px 5px;
+  border: 0px;
+  cursor: pointer;
+  outline: transparent;
+}
+.delete-n {
+  background-color: #9b9b9b;
+}
+.delete-y {
+  font-weight: bold;
+  background-color: #c66f6f;
+}
+.delete-n:hover {
+  background-color: #c2c2c2;
+}
+.delete-y:hover {
+  background-color: #ed7373;
+}
+.intro-wrapper {
+  /* display: none; */
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background: #f3f3f3;
+  z-index: 100;
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-fill-mode: both;
+  animation-name: loading-intro;
+}
+@keyframes loading-intro {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+.menu-bar > h1 {
+  position: relative;
+  z-index: 999;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+  animation-name: loading-logo;
+}
+@keyframes loading-logo {
+  0% {
+      transform: scale(3) translate3d(130px, 80px, 0px);
+      opacity: 0;
+  }
+  100% {
+    transform: scale(1) translate3d(0px, 0px, 0px);
+      opacity: 1;
+  }
+}

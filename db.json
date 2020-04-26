@@ -2,19 +2,207 @@
   "travels": [
     {
       "id": 1,
-      "title": "파리여행",
-      "country": "프랑스",
-      "outDate": "2020.05.16",
-      "inDate": "2020.05.18",
-      "schedule": [{ "date":"2020.05.16", "timeFrom": 9, "timeTo": 11, "place": "인천", "detail": "blabla"},
-                  { "date":"2020.05.16", "timeFrom": 12, "timeTo": 14, "place": "파리", "detail": "blabla"},
-                  { "date":"2020.05.17","timeFrom": 14, "timeTo": 16, "place": "에펠탑", "detail": "blabla"},
-                  { "date":"2020.05.17", "timeFrom": 18, "timeTo": 20, "place": "개선문", "detail": "blabla"},
-                  { "date":"2020.05.18", "timeFrom": 14, "timeTo": 16, "place": "센느강", "detail": "blabla"},
-                  { "date":"2020.05.18", "timeFrom": 18, "timeTo": 20, "place": "몽마르트", "detail": "blabla"}],
-      "info": [{ "type": "flights", "id": 1, "departTime": "20.05.16.18:10:00", "landTime": "20.05.16.18:10:00", "departPlace": "인천", "landPlace": "파리"},
-              { "type": "flights", "id": 2, "departTime": "20.05.16.18:10:00", "landTime": "20.05.16.18:10:00", "departPlace": "인천", "landPlace": "파리"},
-              { "type": "hotels", "id": 1, "name": "novotel", "address": "blabla", "website": "blabla" },
-              { "type": "hotels", "id": 2, "name": "novotel", "address": "blabla", "website": "blabla" }]
-    }]
+      "title": "유럽 가족여행",
+      "place": "프랑스, 이탈리아, 크로아티아",
+      "startDate": "2020/3/1",
+      "endDate": "2020/3/24"
+    },
+    {
+      "id": 2,
+      "title": "얼음국 여행",
+      "place": "ICELAND",
+      "startDate": "2020/1/20",
+      "endDate": "2020/1/29"
+    },
+    {
+      "id": 3,
+      "title": "희진, 승은과 함께하는 우정 여행",
+      "place": "샌프란시스코",
+      "startDate": "2020/4/25",
+      "endDate": "2020/5/5"
+    }
+  ],
+  "schedules": [
+    {
+      "travelId": "2",
+      "date": "1/20",
+      "timeFrom": "8:00",
+      "timeTo": "10:00",
+      "place": "레이캬비크",
+      "detail": "동네 한바퀴",
+      "id": 1
+    },
+    {
+      "travelId": "2",
+      "date": "1/20",
+      "timeFrom": "12:00",
+      "timeTo": "13:00",
+      "place": "레스토랑",
+      "detail": "점심 먹기",
+      "id": 2
+    },
+    {
+      "travelId": "2",
+      "date": "1/21",
+      "timeFrom": "14:00",
+      "timeTo": "16:00",
+      "place": "블루라군",
+      "detail": "목욕하기",
+      "id": 3
+    },
+    {
+      "travelId": "2",
+      "date": "1/21",
+      "timeFrom": "9:00",
+      "timeTo": "10:00",
+      "place": "호텔",
+      "detail": "조식 먹기",
+      "id": 4
+    },
+    {
+      "travelId": "1",
+      "date": "3/1",
+      "timeFrom": "11:00",
+      "timeTo": "14:30",
+      "place": "스플리트",
+      "detail": "보트 빌려서 흐바르 섬 가기",
+      "id": 5
+    },
+    {
+      "travelId": "1",
+      "date": "3/2",
+      "timeFrom": "8:10",
+      "timeTo": "11:10",
+      "place": "자그레브",
+      "detail": "쇼핑하기",
+      "id": 6
+    },
+    {
+      "travelId": "1",
+      "date": "3/2",
+      "timeFrom": "13:00",
+      "timeTo": "17:00",
+      "place": "자그레브 공항",
+      "detail": "프랑스로 이동",
+      "id": 7
+    },
+    {
+      "travelId": "3",
+      "date": "4/25",
+      "timeFrom": "11:00",
+      "timeTo": "12:00",
+      "place": "인천 공항",
+      "detail": "패캠 탈출",
+      "id": 8
+    },
+    {
+      "travelId": "3",
+      "date": "4/25",
+      "timeFrom": "13:00",
+      "timeTo": "13:00",
+      "place": "공항",
+      "detail": "맛점",
+      "id": 9
+    },
+    {
+      "travelId": "3",
+      "date": "4/25",
+      "timeFrom": "9:00",
+      "timeTo": "9:10",
+      "place": "홈스윗홈",
+      "detail": "딥슬립",
+      "id": 10
+    }
+  ],
+  "airlines": [
+    {
+      "travelId": "2",
+      "type": "departure",
+      "date": "1/20",
+      "airplaneName": "대한항공",
+      "departureTime": "7:00",
+      "departureAirport": "ICN",
+      "arrivalTime": "9:00",
+      "arrivalAirport": "WWW",
+      "id": 1
+    },
+    {
+      "travelId": "2",
+      "type": "arrival",
+      "date": "1/29",
+      "airplaneName": "대한항공",
+      "departureTime": "7:00",
+      "departureAirport": "WWW",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "ICN",
+      "id": 2
+    },
+    {
+      "travelId": "1",
+      "type": "departure",
+      "date": "3/1",
+      "airplaneName": "KLM",
+      "departureTime": "12:00",
+      "departureAirport": "ICN",
+      "arrivalTime": "22:00",
+      "arrivalAirport": "ZWB",
+      "id": 3
+    },
+    {
+      "travelId": "1",
+      "type": "arrival",
+      "date": "3/24",
+      "airplaneName": "Air France",
+      "departureTime": "10:00",
+      "departureAirport": "CDG",
+      "arrivalTime": "10:00",
+      "arrivalAirport": "ICN",
+      "id": 4
+    },
+    {
+      "travelId": "3",
+      "type": "departure",
+      "date": "4/25",
+      "airplaneName": "아시아나",
+      "departureTime": "7:00",
+      "departureAirport": "ICN",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "SPF",
+      "id": 5
+    },
+    {
+      "travelId": "3",
+      "type": "arrival",
+      "date": "5/5",
+      "airplaneName": "대한항공",
+      "departureTime": "7:00",
+      "departureAirport": "SPF",
+      "arrivalTime": "7:00",
+      "arrivalAirport": "ICN",
+      "id": 6
+    }
+  ],
+  "lodgings": [
+    {
+      "hotelName": "IBIS",
+      "hotelPlace": "레이캬비크",
+      "hotelsite": "www.booking.com",
+      "travelId": "2",
+      "id": 1
+    },
+    {
+      "hotelName": "Novotel",
+      "hotelPlace": "파리",
+      "hotelsite": "www.agoda.com",
+      "travelId": "1",
+      "id": 2
+    },
+    {
+      "hotelName": "포시즌 호텔",
+      "hotelPlace": "영국",
+      "hotelsite": "www.airbnb.com",
+      "travelId": "1",
+      "id": 3
+    }
+  ]
 }

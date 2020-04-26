@@ -91,16 +91,3 @@ ex.	닫기 button 추가 / 시계기능 추가 / input 추가
 7. git pull pmorigin
 8. git flow feature finish feature이름
 9. git merge develop
-
-<br>
-
-### 기능별 git branch 이름
-
-- feature/basic: html 마크업
-- feature/style: css style
-- feature/renderDb: 렌더링 & 데이터 가져오는 기능
-- feature/register: 명함 정보 등록 기능
-- feature/check: 명함 정보 형식 확인 기능
-- feature/delete: 명함 삭제 기능
-- feature/sort: 명함 리스트 정렬 기능
-- feature/favorite: 즐겨찾기 설정 기능
