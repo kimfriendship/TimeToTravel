@@ -1,12 +1,12 @@
-# 여행 스케줄 관리 앱 이름
+# time to travel
 
-2020년 4월 자바스크립트 기반 프로젝트입니다.
+2020.04.20 - 2020.04.24 기간 동안 진행한 순수 자바스크립트 프로젝트입니다.
 
 <br>
 
 ## 주제
 
-여행 스케줄을 관리하는 웹 어플리케이션입니다.
+여행 스케줄을 관리하는 웹 어플리케이션을 개발하였습니다.
 
 <br>
 
@@ -61,7 +61,7 @@ Pm - 이희진, T1 - 김우정, T2 - 송승은
 
 ## 사용 기술
 
-html, css, javascript, github, json-server, webpack, babel, axios
+html, css, javascript, github, json-server, axios
 
 <br>
 
