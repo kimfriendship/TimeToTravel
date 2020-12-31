@@ -1,6 +1,7 @@
 # 여행 스케줄 관리 앱 이름
 
 2020년 4월 자바스크립트 기반 프로젝트입니다.
+(실행 방법: 클론 후 `npm start`)
 
 <br>
 
@@ -53,7 +54,7 @@ Pm - 이희진, T1 - 김우정, T2 - 송승은
 - 사용자가 각 페이지별 정보를 수정할 수 있는 기능을 추가한다.
 - 가계부 기능을 추가한다.
 - 여행 정보에 나라별 환율 정보와 날씨 정보를 나타내는 기능을 추가한다.
-- 스케줄 알람 기능을 추가한다. 
+- 스케줄 알람 기능을 추가한다.
 - 타임라인에 소요시간을 항목별로 표시할 수 있는 기능을 추가한다.
 - 지도를 활용한 기능을 추가한다. (구글 맵 API)
 
@@ -71,13 +72,13 @@ html, css, javascript, github, json-server, webpack, babel, axios
 - public
   - index.html
   - js
-    * main.js
-    * popup-warning.js
-    * select-box-date.js
-    * travel-list.js
+    - main.js
+    - popup-warning.js
+    - select-box-date.js
+    - travel-list.js
   - css
-    * index.css 
-    * reset.css 
+    - index.css
+    - reset.css
   - img
 
 <br>
